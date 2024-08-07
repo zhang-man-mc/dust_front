@@ -77,7 +77,7 @@
 
 <style  scoped>
 .el-select {
-    width: 100px;
+    width: 100%;
 }
 .container {
   display: flex;
@@ -90,5 +90,4 @@
   color: #333333;
   font-size: 14px;
 }
-
 </style>

@@ -255,6 +255,8 @@ export default {
                 </el-col>
               </el-row>
             </div>
+
+            
             <div class="button-and-export">
               <el-form-item>
                 <el-tag class="ml-2" type="success" size="large">点位总数</el-tag>

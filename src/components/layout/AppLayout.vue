@@ -41,8 +41,8 @@ import Content from '@/components/core/Content.vue';
 .header-and-main {
   flex-direction: column;
   height: 100vh;
-  // min-width: 1445px;
-  min-width: 1475px;
+  // min-width: 1475px;
+  min-width: 700px;
 }
 /* // 垂直方向溢出区域禁止滚动 */
 .el-main {

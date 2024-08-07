@@ -214,7 +214,7 @@ export default {
   font-size: 14px;
   color: #333333;
 }
-.el-autocomplete {
-  width: 200px;
-}
+/* .el-autocomplete {
+  width: 100%;
+} */
 </style>
