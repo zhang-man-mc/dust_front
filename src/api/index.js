@@ -2,7 +2,7 @@ import axios from 'axios'
 import { setInterceptors } from './config'
 
 // 本机测试
-const url = 'http://localhost:8082/'
+const url = 'http://localhost:8081/'
 
 
 //飞羽监管

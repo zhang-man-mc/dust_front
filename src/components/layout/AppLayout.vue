@@ -1,34 +1,20 @@
-
-<script  >
-import  AppAside  from "./AppAside.vue";
-import  AppHeader from "./AppHeader.vue"
-import Content from '@/components/core/Content.vue';
-  export default{
-    components:[
-    AppAside,
-    AppHeader,
-    Content
-    ],
-    data(){
-      return{
-
-      }
-    },
-    methods:{
-
-    }
-
-  }
+<script>
+import AppAside from './AppAside.vue'
+import AppHeader from './AppHeader.vue'
+import Content from '@/components/core/Content.vue'
+export default {
+  components: [AppAside, AppHeader, Content]
+}
 </script>
 
 <template>
-    <div class="page-container"> 
+  <div class="page-container">
     <el-container>
-      <AppAside/>
+      <AppAside />
       <el-container class="header-and-main">
-        <AppHeader/>
-        <el-main >
-          <Content></Content>
+        <AppHeader />
+        <el-main>
+          <Content></Content>1
           <!-- <RouterView/> -->
         </el-main>
       </el-container>
@@ -37,7 +23,6 @@ import Content from '@/components/core/Content.vue';
 </template>
 
 <style lang="scss" scoped>
-
 .header-and-main {
   flex-direction: column;
   height: 100vh;
@@ -52,6 +37,4 @@ import Content from '@/components/core/Content.vue';
 * {
   font-family: 'KaiGenGothicSC-Light';
 }
-
 </style>
-

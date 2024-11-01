@@ -1,5 +1,4 @@
 <!-- 区域和检测类型
-
     **父组件
     <AreaAndmonitorType ></AreaAndmonitorType>
 -->
@@ -86,8 +85,7 @@
   margin-right: 30px;
 }
 .text {
-  
   color: #333333;
-  font-size: 14px;
+  font-size: 1rem;
 }
 </style>
