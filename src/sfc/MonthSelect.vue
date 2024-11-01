@@ -27,7 +27,7 @@ import time from '@/utils/time.js'
     
     data() {
       return{
-        value:''
+        value: new Date(2023, 9, 1),
       }
     },
     watch:{
@@ -38,7 +38,7 @@ import time from '@/utils/time.js'
       }
     },
     mounted() {
-        this.pre_month()
+        this.$emit('submitValue',this.value)
     },
     methods: {
         pre_month(){
@@ -46,7 +46,7 @@ import time from '@/utils/time.js'
           this.$emit('submitValue',this.value)
         },
       judgeDateValid(date) {
-          return time.judgeDateValid(date)
+          return time.judgeDateValid(date,'limitMonth')
         }
      }
 }

@@ -5,17 +5,34 @@ import customParseFormat from 'dayjs/plugin/customParseFormat'
 import dayjs from 'dayjs'
 dayjs.extend(customParseFormat)
 export default {
-  // 判断已选的月份是否大于当前月份
-  judgeDateValid(date) {
-    // 获得当月月份
-    let currentMonth = dayjs()
-    let selectMonth = date.getTime()
-    // 选择大于现在月份
-    if (selectMonth > currentMonth) {
-      return true
+  judgeDateValid(date, flag) {
+    switch (flag) {
+      case 'limitMonth':
+        return this.limitDateTime(date, 2023, 9, 11)
+      case 'exceptionPage':
+        return this.limitDateTime(date, 2023, 6, 11)
     }
+  },
 
-    return false
+  // limitMonth(date) {
+  //   let selectMonth = date.getMonth()
+  //   let selectYear = date.getFullYear()
+  //   // 月份从0到11  规定只能选择7~12月
+  //   let validMonth = 9 <= selectMonth && selectMonth <= 11
+  //   if (selectYear == '2023' && validMonth) {
+  //     return false
+  //   }
+  //   return true
+  // },
+  limitDateTime(date, year, beginMonth, endMonth) {
+    let selectMonth = date.getMonth()
+    let selectYear = date.getFullYear()
+    // 月份从0到11  规定只能选择7~12月
+    let validMonth = beginMonth <= selectMonth && selectMonth <= endMonth
+    if (selectYear == year && validMonth) {
+      return false
+    }
+    return true
   },
 
   /**
@@ -242,19 +259,19 @@ export default {
   },
   /**
    * 根据时间字符串返回UTC时间
-   * @param： 
+   * @param：
    * @returns：
    */
-  utcTime(timeStr){
+  utcTime(timeStr) {
     return dayjs(timeStr).format()
   },
   /**
    * 将utc时间转为时间字符串
-   * @param： 
+   * @param：
    * @returns：
    */
-  utcToStr(dateTime){
-    const r = dateTime ? dayjs(dateTime).format('YYYY-MM-DD HH:mm:ss') :false
+  utcToStr(dateTime) {
+    const r = dateTime ? dayjs(dateTime).format('YYYY-MM-DD HH:mm:ss') : false
     return r
   }
 }

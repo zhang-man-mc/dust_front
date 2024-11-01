@@ -15,15 +15,14 @@
   ***
 -->
 
-
 <script>
-import dayjs from 'dayjs';
+import dayjs from 'dayjs'
 import time from '@/utils/time.js'
 export default {
   props: {
-    beginAndEndTime:{
-      type:Array,
-      default: ()=>{
+    beginAndEndTime: {
+      type: Array,
+      default: () => {
         return []
       }
     },
@@ -34,7 +33,7 @@ export default {
     // 是否设置只读属性
     readOnly: {
       type: Boolean,
-      default:false
+      default: false
     }
   },
   emits: ['submitTime'],
@@ -44,23 +43,20 @@ export default {
       // 随便设置初始值 ，mounted时再设正确的，目的是改变时间了触发change
       time: ['2023-06-01 12:00:00', '2023-06-20 16:00:00'],
       shortcuts: [],
-      defaultTime :[
-        new Date(2000, 1, 1, 0, 0, 0),
-        new Date(2000, 2, 1, 23, 59, 59),
-      ]
-    };
+      defaultTime: [new Date(2000, 1, 1, 0, 0, 0), new Date(2000, 2, 1, 23, 59, 59)]
+    }
   },
-  watch:{
-    beginAndEndTime(){
-      if(this.beginAndEndTime.lenth!=0){
+  watch: {
+    beginAndEndTime() {
+      if (this.beginAndEndTime.lenth != 0) {
         this.time = this.beginAndEndTime
       }
     }
   },
   mounted() {
-    this.initShortCuts();
-    this.initOneWeekAgoTime();
-    this.$emit('submitTime', this.time);
+    this.initShortCuts()
+    // this.initOneWeekAgoTime()
+    this.$emit('submitTime', ['2023-07-01 00:00:00', '2023-07-01 23:59:59'])
   },
   methods: {
     initShortCuts() {
@@ -68,14 +64,14 @@ export default {
         {
           text: '前一日',
           value: () => {
-            if (this.time[0]=='2023-06-01 12:00:00' && this.time[1] == '2023-06-20 16:00:00'){
-              const start = dayjs().subtract(1,'day').format('YYYY-MM-DD 00:00:00')
-              const end = dayjs().subtract(1,'day').format('YYYY-MM-DD 23:59:59')
-              return [start, end];
-            }else{
-              const start = dayjs(this.time[0]).subtract(1,'day').format('YYYY-MM-DD 00:00:00')
-              const end = dayjs(this.time[1]).subtract(1,'day').format('YYYY-MM-DD 23:59:59')
-              return [start, end];
+            if (this.time[0] == '2023-06-01 12:00:00' && this.time[1] == '2023-06-20 16:00:00') {
+              const start = dayjs().subtract(1, 'day').format('YYYY-MM-DD 00:00:00')
+              const end = dayjs().subtract(1, 'day').format('YYYY-MM-DD 23:59:59')
+              return [start, end]
+            } else {
+              const start = dayjs(this.time[0]).subtract(1, 'day').format('YYYY-MM-DD 00:00:00')
+              const end = dayjs(this.time[1]).subtract(1, 'day').format('YYYY-MM-DD 23:59:59')
+              return [start, end]
             }
           }
         },
@@ -83,96 +79,90 @@ export default {
         {
           text: '前7天',
           value: () => {
-            if (this.time[0]=='2023-06-01 12:00:00' && this.time[1] == '2023-06-20 16:00:00'){
-              const start = dayjs().subtract(7,'day').format('YYYY-MM-DD 00:00:00');
-              const end = dayjs().subtract(1,'day').format('YYYY-MM-DD 23:59:59');
-            return [start, end];
-            }else{
-              const start = dayjs(this.time[0]).subtract(7,'day').format('YYYY-MM-DD 00:00:00')
-              const end = dayjs(this.time[1]).subtract(7,'day').format('YYYY-MM-DD 23:59:59')
-              return [start, end];
+            if (this.time[0] == '2023-06-01 12:00:00' && this.time[1] == '2023-06-20 16:00:00') {
+              const start = dayjs().subtract(7, 'day').format('YYYY-MM-DD 00:00:00')
+              const end = dayjs().subtract(1, 'day').format('YYYY-MM-DD 23:59:59')
+              return [start, end]
+            } else {
+              const start = dayjs(this.time[0]).subtract(7, 'day').format('YYYY-MM-DD 00:00:00')
+              const end = dayjs(this.time[1]).subtract(7, 'day').format('YYYY-MM-DD 23:59:59')
+              return [start, end]
             }
-            
           }
         },
         {
           text: '上一月',
           value: () => {
-            if (this.time[0]=='2023-06-01 12:00:00' && this.time[1] == '2023-06-20 16:00:00'){
-              const start = dayjs().subtract(1,'month').startOf('month').format('YYYY-MM-DD HH:mm:ss');
-              const end = dayjs().subtract(1,'month').endOf('month').format('YYYY-MM-DD HH:mm:ss');
-              return [start, end];
-            }else{
-              const start = dayjs(this.time[0]).subtract(1,'month').format('YYYY-MM-DD HH:mm:ss')
-              const end = dayjs(this.time[1]).subtract(1,'month').format('YYYY-MM-DD HH:mm:ss')
-              return [start, end];
+            if (this.time[0] == '2023-06-01 12:00:00' && this.time[1] == '2023-06-20 16:00:00') {
+              const start = dayjs()
+                .subtract(1, 'month')
+                .startOf('month')
+                .format('YYYY-MM-DD HH:mm:ss')
+              const end = dayjs().subtract(1, 'month').endOf('month').format('YYYY-MM-DD HH:mm:ss')
+              return [start, end]
+            } else {
+              const start = dayjs(this.time[0]).subtract(1, 'month').format('YYYY-MM-DD HH:mm:ss')
+              const end = dayjs(this.time[1]).subtract(1, 'month').format('YYYY-MM-DD HH:mm:ss')
+              return [start, end]
             }
-            
           }
         }
-      ];
-
+      ]
     },
 
     initOneWeekAgoTime() {
       switch (this.timeType) {
         case 'day':
-          this.time[0] = dayjs()
-            .subtract(1, 'day')
-            .format('YYYY-MM-DD 00:00:00');
-          this.time[1] = dayjs().subtract(1, 'day').format('YYYY-MM-DD 23:59:59');
-          break;
+          this.time[0] = dayjs().subtract(1, 'day').format('YYYY-MM-DD 00:00:00')
+          this.time[1] = dayjs().subtract(1, 'day').format('YYYY-MM-DD 23:59:59')
+          break
         case 'week':
-          this.time[0] = dayjs()
-            .subtract(1, 'week')
-            .format('YYYY-MM-DD HH:mm:ss');
-          this.time[1] = dayjs().format('YYYY-MM-DD HH:mm:ss');
-          break;
+          this.time[0] = dayjs().subtract(1, 'week').format('YYYY-MM-DD HH:mm:ss')
+          this.time[1] = dayjs().format('YYYY-MM-DD HH:mm:ss')
+          break
         case 'month':
-          this.time[0] = dayjs()
-            .subtract(1, 'month')
-            .format('YYYY-MM-DD HH:mm:ss');
-          this.time[1] = dayjs().format('YYYY-MM-DD HH:mm:ss');
-          break;
+          this.time[0] = dayjs().subtract(1, 'month').format('YYYY-MM-DD HH:mm:ss')
+          this.time[1] = dayjs().format('YYYY-MM-DD HH:mm:ss')
+          break
         case 'currentMonth':
-        this.time[0] = dayjs().startOf('month').format('YYYY-MM-DD HH:mm:ss')
-        this.time[1] = dayjs().subtract(1,'day').format('YYYY-MM-DD 23:59:59')
-        // 防止在每月的1号，出现time[0]>time[1]的情况
-        if(this.time[0]<this.time[1]){
-          break  
+          this.time[0] = dayjs().startOf('month').format('YYYY-MM-DD HH:mm:ss')
+          this.time[1] = dayjs().subtract(1, 'day').format('YYYY-MM-DD 23:59:59')
+          // 防止在每月的1号，出现time[0]>time[1]的情况
+          if (this.time[0] < this.time[1]) {
+            break
           }
+          break
         default:
-          this.time[0] = dayjs().subtract(1, 'month').format('YYYY-MM-DD HH:mm:ss');
-          this.time[1] = dayjs().format('YYYY-MM-DD HH:mm:ss');
+          this.time[0] = dayjs().subtract(1, 'month').format('YYYY-MM-DD HH:mm:ss')
+          this.time[1] = dayjs().format('YYYY-MM-DD HH:mm:ss')
       }
     },
     judgeDateValid(date) {
-          return time.judgeDateValid(date)
-        }
+      return time.judgeDateValid(date,'exceptionPage')
+    }
   }
-};
+}
 </script>
 
 <template>
   <div class="block">
     <span class="demonstration">起止时间：</span>
     <div class="pick-date">
-    <el-date-picker
-      v-model="time"
-      type="datetimerange"
-      :shortcuts="shortcuts"
-      range-separator="~"
-      start-placeholder="开始时间"
-      end-placeholder="结束时间"
-      value-format="YYYY-MM-DD HH:mm:ss"
-      :disabled-date="judgeDateValid"
-      @change="$emit('submitTime', time)"
-      :default-time = "defaultTime"
-      :readonly="readOnly"
-    />
-      
-
-  </div>
+      <el-date-picker
+        v-model="time"
+        type="datetimerange"
+        :shortcuts="shortcuts"
+        range-separator="~"
+        start-placeholder="开始时间"
+        end-placeholder="结束时间"
+        value-format="YYYY-MM-DD HH:mm:ss"
+        :disabled-date="judgeDateValid"
+        @change="$emit('submitTime', time)"
+        :default-time="defaultTime"
+        :default-value="new Date(2023, 7, 1)"
+        :readonly="readOnly"
+      />
+    </div>
   </div>
 </template>
 
@@ -186,6 +176,4 @@ export default {
   font-weight: bold;
   font-size: 14px;
 }
-
-
 </style>

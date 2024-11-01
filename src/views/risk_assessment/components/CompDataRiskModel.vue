@@ -209,6 +209,7 @@ export default {
       // 更新排名清单，并得到风险值最高站点
       let arr = await this.getRiskRank()
       this.form.siteName = arr[0]
+      console.log('site', this.form.siteName)
       this.form.mnCode = arr[1]
       this.screenLoading = false
 

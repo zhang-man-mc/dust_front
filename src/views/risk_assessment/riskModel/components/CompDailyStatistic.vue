@@ -2,17 +2,18 @@
 import exceptionApi from '@/api/exceptionApi.js'
 import lineChart from '@/utils/chartFunction/lineChart.js'
 import time from '@/utils/time.js'
-// import time from '@/utils/time.js'
 import FYLineChart from '@/components/chart/FYLineChart.vue'
 export default {
   props: {
     fetchParams: {
       type: Object,
-      default: {
-        siteName: null,
-        mnCode: null,
-        beginTime: null,
-        endTime: null
+      default() {
+        return {
+          siteName: null,
+          mnCode: null,
+          beginTime: null,
+          endTime: null
+        }
       }
     }
   },
@@ -34,50 +35,53 @@ export default {
   watch: {
     fetchParams: {
       handler() {
-        if(this.fetchParams.siteName != '' && this.fetchParams.siteName != null){
+        if (this.fetchParams.siteName != '' && this.fetchParams.siteName != null) {
           this.fetchDayAnalysisData()
         }
       },
       deep: true
     }
   },
-  mounted() {
-  },
+  mounted() {},
   methods: {
     //  根据目前站点，月份，查折线图日统计数据
     fetchDayAnalysisData() {
-      exceptionApi.analysisdata(
+      exceptionApi
+        .analysisdata(
           this.fetchParams.siteName,
           this.fetchParams.beginTime,
           this.fetchParams.endTime,
           'day'
         )
-        .then(response => {
+        .then((response) => {
           const chartData = response
           if (chartData.length == 0) {
             return
           }
 
-          const timeArr = chartData.map(item => {
+          const timeArr = chartData.map((item) => {
             return item.lst
           })
-          
+
           // 无数据的时间段
-          let noDataTimeInterval = time.getMissingDays(this.fetchParams.beginTime, this.fetchParams.endTime,timeArr)
+          let noDataTimeInterval = time.getMissingDays(
+            this.fetchParams.beginTime,
+            this.fetchParams.endTime,
+            timeArr
+          )
           // 无数据配置时间段
           this.chart.areaColor = lineChart.getMarkArea(noDataTimeInterval)
           this.setChart(chartData, this.fetchParams.beginTime, this.fetchParams.endTime)
-   
         })
     },
 
     /**
      * 组件折线图的配置项
-     * @param： 
+     * @param：
      * @returns：
      */
     setChart(cData, bt, et) {
-      if (cData.length!=0) {
+      if (cData.length != 0) {
         // 构建折线图x,y数据
         let obj = lineChart.getLineChartXYData(cData, bt, et)
         this.chart.chartDataAvg = {
@@ -89,7 +93,7 @@ export default {
           y: obj.yValid
         }
       }
-    },
+    }
   }
 }
 </script>

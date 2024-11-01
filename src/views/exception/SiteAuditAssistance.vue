@@ -42,8 +42,8 @@ export default {
       // 日期选择
       day:'',
       // 日期时间选择
-      beginTime: '',
-      endTime: '',
+      beginTime: '2023-07-01 00:00:00',
+      endTime: '2023-07-01 23:59:59',
       // 返回的数据
       tableData: [],
       // 表格展示的数据
@@ -199,7 +199,6 @@ export default {
   mounted() {
     this.backExceptionDataAWeekAgo()
     this.calTableHeight()
- 
   },
 
   methods: {
@@ -1249,25 +1248,6 @@ export default {
             this.flag.banTouch = 0
           }
         })
-
-      // let params = {}
-      // if (row.name) {
-      //   params['siteName'] = row.name
-      // }
-      // if (row.beginTime) {
-      //   params['beginTime'] = row.beginTime
-      // }
-      // if (row.endTime) {
-      //   params['endTime'] = row.endTime
-      // }
-
-      // this.$http.get('/dust/history', { params: params }).then((response) => {
-      //   // 保存返回的超标数据
-      //   this.dialog.historyData = response.data.data
-      //   this.dialog.exceptionTotal = response.data.data.length
-      //   // 逻辑处理
-      //   this.timeAndDataProcessed()
-      // })
     },
 
     /**
@@ -1337,7 +1317,6 @@ export default {
 
       this.$http.get('/dust/exceptiondata', { params: params }).then((response) => {
         // 保存返回的
-        // this.tableData = response.data.data.rows;
         this.displayData = response.data.data.rows
 
         if (response.data.data.total == 0) {

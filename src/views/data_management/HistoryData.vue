@@ -302,6 +302,7 @@ export default {
             align="center"
             fixed
             :index="indexMethod"
+            width="80px"
           ></el-table-column>
           <el-table-column prop="name" label="点位名称" show-overflow-tooltip></el-table-column>
           <el-table-column
