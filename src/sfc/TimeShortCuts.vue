@@ -41,7 +41,7 @@ export default {
     return {
       //保存开始和结束时间
       // 随便设置初始值 ，mounted时再设正确的，目的是改变时间了触发change
-      time: ['2023-06-01 12:00:00', '2023-06-20 16:00:00'],
+      time: ['2023-07-01 00:00:00', '2023-07-01 23:59:59'],
       shortcuts: [],
       defaultTime: [new Date(2000, 1, 1, 0, 0, 0), new Date(2000, 2, 1, 23, 59, 59)]
     }
@@ -60,11 +60,12 @@ export default {
   },
   methods: {
     initShortCuts() {
+      const defaultTime = ['2023-07-01 00:00:00', '2023-07-01 23:59:59']
       this.shortcuts = [
         {
           text: '前一日',
           value: () => {
-            if (this.time[0] == '2023-06-01 12:00:00' && this.time[1] == '2023-06-20 16:00:00') {
+            if (this.time == defaultTime) {
               const start = dayjs().subtract(1, 'day').format('YYYY-MM-DD 00:00:00')
               const end = dayjs().subtract(1, 'day').format('YYYY-MM-DD 23:59:59')
               return [start, end]
@@ -79,7 +80,7 @@ export default {
         {
           text: '前7天',
           value: () => {
-            if (this.time[0] == '2023-06-01 12:00:00' && this.time[1] == '2023-06-20 16:00:00') {
+            if (this.time == defaultTime) {
               const start = dayjs().subtract(7, 'day').format('YYYY-MM-DD 00:00:00')
               const end = dayjs().subtract(1, 'day').format('YYYY-MM-DD 23:59:59')
               return [start, end]
@@ -93,7 +94,7 @@ export default {
         {
           text: '上一月',
           value: () => {
-            if (this.time[0] == '2023-06-01 12:00:00' && this.time[1] == '2023-06-20 16:00:00') {
+            if (this.time == defaultTime) {
               const start = dayjs()
                 .subtract(1, 'month')
                 .startOf('month')

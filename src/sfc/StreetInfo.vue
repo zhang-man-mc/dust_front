@@ -1,7 +1,7 @@
 <!-- 街镇类型
 
     **父组件
-    <AreaAndmonitorType ></AreaAndmonitorType>
+    <AreaAndMonitorType ></AreaAndMonitorType>
 -->
 <script>
 import siteInfo from '@/api/site/siteInfo.js'

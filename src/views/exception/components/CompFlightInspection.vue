@@ -3,7 +3,7 @@
 <script>
 import TimeShortCuts from '@/sfc/TimeShortCuts.vue'
 import { useCommonFunction } from '@/utils/common.js'
-import AreaAndMonitorType from '@/sfc/AreaAndmonitorType.vue'
+import AreaAndMonitorType from '@/sfc/AreaAndMonitorType.vue'
 import ButtonClick from '@/sfc/ButtonClick.vue'
 import exceptionApi from '@/api/exceptionApi.js'
 import dayjs from 'dayjs'

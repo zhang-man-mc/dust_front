@@ -1,6 +1,6 @@
 <!-- 区域和检测类型
     **父组件
-    <AreaAndmonitorType ></AreaAndmonitorType>
+    <AreaAndMonitorType ></AreaAndMonitorType>
 -->
 
 <script>
@@ -76,7 +76,7 @@
 
 <style  scoped>
 .el-select {
-    width: 100%;
+    width: 100px;
 }
 .container {
   display: flex;

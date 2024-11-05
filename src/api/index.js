@@ -2,7 +2,7 @@ import axios from 'axios'
 import { setInterceptors } from './config'
 
 // 本机测试
-const url =  (import.meta.env.DEV == true) ? 'http://localhost:8081/':'http://117.72.109.0:7861'
+const url =  (import.meta.env.DEV == true) ? 'http://localhost:7861/':'http://117.72.109.0:7861'
 
 
 //飞羽监管

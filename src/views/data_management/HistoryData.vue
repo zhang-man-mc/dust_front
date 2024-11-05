@@ -3,7 +3,7 @@ import TimeShortCuts from '@/sfc/TimeShortCuts.vue'
 import ScenarioType from '@/sfc/ScenarioType.vue'
 import InputSearch from '@/sfc/InputSearch.vue'
 import { ElMessage } from 'element-plus'
-import AreaAndmonitorType from '@/sfc/AreaAndmonitorType.vue'
+import AreaAndMonitorType from '@/sfc/AreaAndMonitorType.vue'
 
 import { useCommonFunction } from '../../utils/common.js'
 import requetsApi from '@/api/exportExcel/requetsApi.js'
@@ -18,7 +18,7 @@ export default {
     InputSearch,
     ButtonClick,
     ButtonExportExcel,
-    AreaAndmonitorType
+    AreaAndMonitorType
   },
   data() {
     return {
@@ -76,7 +76,7 @@ export default {
         params['siteName'] = this.form.name
       }
       if (this.form.number) {
-        params['mnCode'] = this.form.numbe
+        params['mnCode'] = this.form.number
       }
       if (this.scenarioType.length != 0) {
         params['scenarioType'] = this.scenarioType
@@ -223,7 +223,7 @@ export default {
               <el-row>
                 <el-col>
                   <el-form-item>
-                    <AreaAndmonitorType></AreaAndmonitorType>
+                    <AreaAndMonitorType></AreaAndMonitorType>
                   </el-form-item>
 
                   <el-form-item>
@@ -282,7 +282,6 @@ export default {
           </el-form>
         </el-card>
       </el-col>
-      <el-col> </el-col>
     </el-row>
 
     <el-row>

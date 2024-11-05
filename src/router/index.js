@@ -13,7 +13,7 @@ const router = createRouter({
         {
           path: '/avgDay',
           name: 'avgDay',
-          meta: { title: '数据分险模型', keepAlive: true },
+          meta: { title: '数据风险模型', keepAlive: false },
           component: () => import('@/views/risk_assessment/DataRiskModel.vue')
         },
 
@@ -48,7 +48,8 @@ const router = createRouter({
           meta: { title: '站点审核辅助', keepAlive: true },
           component: () => import('@/views/exception/SiteAuditAssistance.vue')
         },
-
+        
+        // 历史数据
         {
           path: '/hdata',
           name: 'hdata',

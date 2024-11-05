@@ -1,5 +1,5 @@
 <script>
-import AreaAndmonitorType from '@/sfc/AreaAndmonitorType.vue'
+import AreaAndMonitorType from '@/sfc/AreaAndMonitorType.vue'
 import { useCommonFunction } from '../../utils/common.js'
 import dayjs from 'dayjs'
 import ButtonExportExcel from '@/sfc/ButtonExportExcel.vue'
@@ -10,7 +10,7 @@ import riskApi from '@/api/risk/riskApi.js'
 import riskValue from '@/utils/risk_estimate_common_function/riskValue.js'
 export default {
   components: {
-    AreaAndmonitorType,
+    AreaAndMonitorType,
     ButtonExportExcel,
     ButtonClick,
     MonthSelect
@@ -228,7 +228,7 @@ export default {
     <el-col :span="24">
       <el-form :inline="true" :model="form">
         <el-form-item>
-          <AreaAndmonitorType></AreaAndmonitorType>
+          <AreaAndMonitorType></AreaAndMonitorType>
         </el-form-item>
 
         <el-form-item>
@@ -264,14 +264,12 @@ export default {
   </el-row>
 
 
-
   <el-table
     ref="table"
     :data="table"
     :height="tableHeight"
     v-loading="loading"
     element-loading-text="后台分析中..."
-    style="width: 98%"
     :cell-class-name="tableCellClassName"
     :default-sort="{ prop: 'riskValue', order: 'descending' }"
     v-show="!isNoData"
@@ -330,22 +328,13 @@ export default {
       width="160"
       show-overflow-tooltip
     />
-    <!-- <el-table-column
-      prop="endTime"
-      label="结束日期"
-      sortable
-      align="center"
-      width="160"
-      show-overflow-tooltip
-    /> -->
   </el-table>
   <el-empty v-show="isNoData" :image-size="200" />
 </template>
 
 <style scoped>
-.el-row,
-.el-table {
-  margin: 10px 0px 0px 10px;
+.el-row{
+  margin: 20px;
 }
 
 :deep(.el-table__row .warning-row) {
@@ -358,6 +347,8 @@ export default {
   border-radius: 0px;
 }
 .el-table {
+  width: 98%;
+  margin: 20px 0px 0px 20px;
   color: #333333;
 }
 .analysis-info {

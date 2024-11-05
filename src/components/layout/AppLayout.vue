@@ -14,8 +14,7 @@ export default {
       <el-container class="header-and-main">
         <AppHeader />
         <el-main>
-          <Content></Content>1
-          <!-- <RouterView/> -->
+          <Content></Content>
         </el-main>
       </el-container>
     </el-container>

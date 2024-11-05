@@ -2,7 +2,7 @@
 import ExceptionType from '@/sfc/ExceptionType.vue'
 import TimeShortCuts from '@/sfc/TimeShortCuts.vue'
 import { useCommonFunction } from '@/utils/common.js'
-import AreaAndmonitorType from '@/sfc/AreaAndmonitorType.vue'
+import AreaAndMonitorType from '@/sfc/AreaAndMonitorType.vue'
 import DustLineChart from '@/views/exception/components/DustLineChart.vue'
 import submitApi from '@/api/audit/submitApi.js'
 import { ElMessage, ElMessageBox } from 'element-plus'
@@ -27,7 +27,7 @@ export default {
     ExceptionType,
     TimeShortCuts,
     DustLineChart,
-    AreaAndmonitorType,
+    AreaAndMonitorType,
   },
   data() {
     return {
@@ -1290,7 +1290,7 @@ export default {
         <el-form :inline="true">
           <div class="head-container-text">
             <el-form-item>
-              <AreaAndmonitorType :isHideArea="1"></AreaAndmonitorType>
+              <AreaAndMonitorType :isHideArea="1"></AreaAndMonitorType>
             </el-form-item>
 
             <!-- <el-form-item>

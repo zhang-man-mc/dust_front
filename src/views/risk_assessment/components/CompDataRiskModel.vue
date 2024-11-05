@@ -1,7 +1,7 @@
 <!-- 日均值 -->
 <script>
 import InputSearch from '@/sfc/InputSearch.vue'
-import AreaAndmonitorType from '@/sfc/AreaAndmonitorType.vue'
+import AreaAndMonitorType from '@/sfc/AreaAndMonitorType.vue'
 import exceptionApi from '@/api/exceptionApi.js'
 import DustRadarChart from '@/views/risk_assessment/components/DustRadarChart.vue'
 import index from '@/utils/risk_estimate_common_function/index.js'
@@ -32,7 +32,7 @@ export default {
   },
   components: {
     InputSearch,
-    AreaAndmonitorType,
+    AreaAndMonitorType,
     DustRadarChart,
     ButtonClick,
     MonthSelect,
@@ -364,7 +364,7 @@ export default {
 <template>
   <el-form :inline="true" :model="form">
     <el-form-item class="form-item">
-      <AreaAndmonitorType></AreaAndmonitorType>
+      <AreaAndMonitorType></AreaAndMonitorType>
     </el-form-item>
 
     <el-form-item class="form-item">

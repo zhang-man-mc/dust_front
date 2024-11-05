@@ -3,7 +3,7 @@ import InputSearch from '@/sfc/InputSearch.vue'
 import ExceptionType from '@/sfc/ExceptionType.vue'
 import TimeShortCuts from '@/sfc/TimeShortCuts.vue'
 import { useCommonFunction } from '../../utils/common.js'
-import AreaAndmonitorType from '@/sfc/AreaAndmonitorType.vue'
+import AreaAndMonitorType from '@/sfc/AreaAndMonitorType.vue'
 import { defineAsyncComponent } from 'vue'
 //  异常图形异步组件
 const DustLineChart = defineAsyncComponent(() => import('./components/DustLineChart.vue'))
@@ -26,7 +26,7 @@ export default {
     InputSearch,
     TimeShortCuts,
     DustLineChart,
-    AreaAndmonitorType,
+    AreaAndMonitorType,
     ButtonClick,
     DaySelect
   },
@@ -1398,7 +1398,7 @@ export default {
         <el-form :inline="true">
           <div class="head-container-text">
             <el-form-item>
-              <AreaAndmonitorType :isHideArea="1"></AreaAndmonitorType>
+              <AreaAndMonitorType :isHideArea="1"></AreaAndMonitorType>
             </el-form-item>
 
             <el-form-item>

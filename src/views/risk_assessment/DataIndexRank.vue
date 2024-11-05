@@ -1,6 +1,6 @@
 <script>
 import TimeShortCuts from '@/sfc/TimeShortCuts.vue'
-import AreaAndmonitorType from '@/sfc/AreaAndmonitorType.vue'
+import AreaAndMonitorType from '@/sfc/AreaAndMonitorType.vue'
 import { useCommonFunction } from '../../utils/common.js'
 import requetsApi from '@/api/exportExcel/requetsApi.js'
 import statisticApi from '@/api/statistic/statisticApi.js'
@@ -11,7 +11,7 @@ import ButtonClick from '@/sfc/ButtonClick.vue'
 export default {
   components: {
     TimeShortCuts,
-    AreaAndmonitorType,
+    AreaAndMonitorType,
     ButtonExportExcel,
     ButtonClick
   },
@@ -196,7 +196,7 @@ export default {
 <template>
   <el-form :inline="true" :model="form" ref="h1">
     <el-form-item>
-      <AreaAndmonitorType></AreaAndmonitorType>
+      <AreaAndMonitorType></AreaAndMonitorType>
     </el-form-item>
     <el-form-item>
       <TimeShortCuts timeType="currentMonth" @submit-time="giveTime"></TimeShortCuts>
