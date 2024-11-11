@@ -412,7 +412,7 @@ export default {
         </el-button>
       </el-card>
 
-      <el-row :gutter="10">
+      <el-row :gutter="10" class="line1">
         <el-col :span="5" v-show="showAll">
           <el-card shadow="never" class="table-class">
             <el-table
@@ -593,6 +593,7 @@ export default {
 }
 .chart-container {
   margin-left: 10px;
+  margin-bottom: 10px;
 }
 .time-text {
   font-size: 14px;
@@ -673,13 +674,7 @@ export default {
 :deep().el-table__header-wrapper {
   color: red;
 }
-/* .wait-name {
-        width: 500px;
-        height: 600px;
-      } */
 .table-class {
-  /* border: 1px solid blue; */
-  /* margin: 20px 0px 20px 0px; */
   height: 570px;
 }
 
@@ -731,5 +726,8 @@ export default {
 }
 .mx-1 {
   margin-left: 100px;
+}
+.line1 {
+  margin-bottom: 10px;
 }
 </style>

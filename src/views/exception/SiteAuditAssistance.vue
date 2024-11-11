@@ -1790,6 +1790,9 @@ export default {
 .el-table {
   color: #333333;
 }
+.el-pagination {
+  margin: 10px 0px;
+}
 /* 表格模块结束 */
 
 /* 查看详情对话框模块的样式 */

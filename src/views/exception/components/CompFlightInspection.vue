@@ -865,5 +865,8 @@ img {
 .el-table {
   color: #333333;
 }
+.el-pagination {
+  margin: 10px 0px;
+}
 /* 表格模块结束 */
 </style>

@@ -347,7 +347,7 @@ export default {
         ></el-table-column>
 
         <el-table-column prop="lst" label="采集时间" align="center" show-overflow-tooltip />
-        <el-table-column prop="yData" label="TSP(mg/m³)" align="center" show-overflow-tooltip />
+        <el-table-column prop="dustValue" label="TSP(mg/m³)" align="center" show-overflow-tooltip />
         <el-table-column prop="flag" label="数据标识" align="center" show-overflow-tooltip />
       </el-table>
     </div>

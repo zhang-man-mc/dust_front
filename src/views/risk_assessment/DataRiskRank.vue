@@ -19,7 +19,7 @@ export default {
     return {
       //   表格数据
       tableData: [],
-      isNoData: true,
+      isNoData: false,
       loading: false,
       // 统计分析按钮加载中
       queryButton: false,
@@ -53,7 +53,7 @@ export default {
       // 表格数据
       table: [],
       // 表格高度
-      tableHeight: 600,
+      tableHeight: 700,
       currentRow: []
     }
   },
@@ -141,7 +141,7 @@ export default {
     calTableHeight() {
       const h1 = this.$refs.h1.$el.offsetHeight
       // 其中一个40是盒子的总外边距
-      this.tableHeight = `calc(100vh - ${h1}px  - 40px - 40px - var(--el-main-padding) * 2`
+      this.tableHeight = `calc(100vh - ${h1}px  - 40px - 20px - var(--el-main-padding) * 2`
     },
 
     // 点击风险排名按钮

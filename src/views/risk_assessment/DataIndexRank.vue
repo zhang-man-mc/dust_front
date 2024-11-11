@@ -117,7 +117,7 @@ export default {
       const h1 = this.$refs.h1.$el.offsetHeight
       const h2 = this.$refs.h2.$el.offsetHeight
       // 其中一个40是盒子的总外边距
-      this.tableHeight = `calc(100vh - ${h1}px - ${h2}px - 40px - 120px - var(--el-main-padding) * 2`
+      this.tableHeight = `calc(100vh - ${h1}px - ${h2}px - 20px - 120px - var(--el-main-padding) * 2`
     },
     // 页大小改变时触发
     handleSizeChange(val) {
@@ -231,10 +231,11 @@ export default {
         prop="name"
         label="序号"
         :index="indexMethod"
+        width="55"
         fixed
         show-overflow-tooltip
       />
-      <el-table-column prop="name" label="点位名称" show-overflow-tooltip width="300">
+      <el-table-column prop="name" label="点位名称"  show-overflow-tooltip width="270">
         <template #default="{ row }">
           <el-button type="primary" text @click="openDetail(row)">
             <span class="rank-site">{{ row.name }}</span></el-button
@@ -284,6 +285,9 @@ export default {
 .el-card {
   margin: 20px 20px 0px 20px;
 }
+:deep(.el-card__body) {
+  padding-bottom: 0px;
+}
 :deep().el-table__row .warning-row {
   background-color: #f7ba1e;
 }
@@ -292,6 +296,9 @@ export default {
 }
 .el-table {
   color: #333333;
+}
+.el-pagination {
+  margin: 10px 0px;
 }
 .rank-site {
   white-space: nowrap;

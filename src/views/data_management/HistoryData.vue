@@ -121,7 +121,7 @@ export default {
       const h1 = this.$refs.h1.$el.offsetHeight
       const h2 = this.$refs.h2.$el.offsetHeight
       // 其中一个40是盒子的总外边距
-      this.tableHeight = `calc(100vh - ${h1}px - ${h2}px - 40px - 40px - var(--el-main-padding) * 2`
+      this.tableHeight = `calc(100vh - ${h1}px - ${h2}px - 40px - 20px - var(--el-main-padding) * 2`
     },
     giveTime(val) {
       //将中国标准时间转为指定格式(该组件返回的标准时间的格式，所以必须的加这个函数)
