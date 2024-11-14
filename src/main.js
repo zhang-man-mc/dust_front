@@ -12,6 +12,9 @@ import { createPinia } from 'pinia'
 
 import {url} from '@/api/index.js'
 
+import { loadingFadeOut } from 'virtual:app-loading'
+loadingFadeOut()
+
 const app = createApp(App)
 const pinia = createPinia()
 

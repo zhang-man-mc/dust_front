@@ -1499,7 +1499,7 @@ export default {
         <el-table-column prop="typename" label="场景" align="center" width="82" show-overflow-tooltip />
         <el-table-column prop="address" label="地址" align="center" show-overflow-tooltip />
         <el-table-column prop="dutyCompany" label="运维商" align="center" show-overflow-tooltip />
-        <el-table-column label="操作" align="center" width="200" fixed="right">
+        <el-table-column label="操作" align="center" width="220" fixed="right">
           <template #default="{ row }">
             <el-button type="primary" @click="showDialog(row)"> 查看详情 </el-button>
             <el-button
@@ -1521,14 +1521,11 @@ export default {
             <el-button v-else size="default" type="danger" @click="openAuditDiag(row)"
               >待审核</el-button
             >
-            <!-- <span v-if="row.auditStatus == 3">已审核</span
-              ><span v-else>审核</span> -->
           </template>
         </el-table-column>
       </el-table>
 
-      <!-- <el-row ref="h2">
-    <el-row> -->
+
       <div class="check-button">
         <el-button
           type="primary"
@@ -1545,8 +1542,7 @@ export default {
           >清除选中</el-button
         >
       </div>
-      <!-- </el-row>
-  </el-row> -->
+
 
       <el-pagination
         ref="h4"
@@ -1715,7 +1711,6 @@ export default {
           <span v-show="tableCurrentRowData.exceptionType == '0'"> (逻辑计算)</span>
         </el-tag>
         <el-text v-show="tableCurrentRowData.exceptionType == '8'" type="warning" class="dialog-footer-text">数据标识A为数据长期缺失,系统自动补全</el-text>
-        <!-- <el-text class="mx-1" type="warning">Warning</el-text> -->
       </div>
     </template>
   </el-dialog>

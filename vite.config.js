@@ -11,6 +11,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 
+import AppLoading from 'vite-plugin-app-loading'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -39,6 +40,7 @@ export default defineConfig({
     Icons({
       autoInstall: true,
     }),
+    AppLoading('loading.html'),
   ],
   
   resolve: {

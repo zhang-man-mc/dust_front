@@ -11,6 +11,7 @@
             v-model="username"
             placeholder="请输入账号"
             size="large"
+            @keyup.enter="login"
           ></el-input>
         </el-form-item>
         <el-form-item label="密码">
@@ -20,10 +21,11 @@
             type="password"
             size="large"
             show-password
+            @keyup.enter="login"
           ></el-input>
         </el-form-item>
         <el-form-item>
-          <el-input v-model="inputVal" class="code" placeholder="验证码"></el-input>
+          <el-input v-model="inputVal" class="code" placeholder="验证码" @keyup.enter="login"></el-input>
           <ValidateCode ref="ref_validateCode" @change="changeCode" />
         </el-form-item>
         <!-- <el-button @click="compare">比对</el-button> -->
@@ -43,6 +45,7 @@ import ValidateCode from '@/sfc/ValidateCode.vue'
 import loginApi from '@/api/loginApi.js'
 import { useLoginUserStore } from '@/stores/user'
 export default {
+  
   components: {
     ValidateCode
   },

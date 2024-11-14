@@ -8,7 +8,6 @@
 -->
 
 <script>
-import exceptionApi from '@/api/exceptionApi.js'
 export default {
   props: {
     // 禁用
@@ -98,15 +97,16 @@ export default {
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .excption {
   display: flex;
+  width: 80vw;
 }
 .exception-text {
   font-size: 14px;
   color: #333333;
   margin-top: 5px;
-  margin-right: 7px;
+  width:100px;
 }
 .el-checkbox-group {
   margin-top: 5px;
