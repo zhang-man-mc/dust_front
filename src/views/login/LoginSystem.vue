@@ -74,12 +74,12 @@ setup(){
   methods: {
     login() {
       if (this.compare()) {
-        // 判断是否勾选记住密码
-        this.hasRemember()
         // loginApi.login(this.username, md5(this.password)).then((res) => {
         loginApi.login(this.username, this.password).then((res) => {
           if (res.data.code == 1) {
             ElMessage.success('登录成功')
+            // 判断是否勾选记住密码
+            this.hasRemember()
             const token = 'abc'
             Cookie.set('token', token)
 
